@@ -3,52 +3,56 @@
 
 <head>
     <title>Formulir Pendaftaran Siswa Baru | SMK Coding</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
-        <h3>Formulir Pendaftaran Siswa Baru</h3>
-    </header>
+    <section class="position-absolute top-50 start-50 translate-middle">
 
-    <form action="proses-pendaftaran.php" method="POST">
+        <h3 class="text-center">Formulir Pendaftaran Siswa Baru</h3>
 
-        <fieldset>
 
-            <p>
-                <label for="nama">Nama: </label>
-                <input type="text" name="nama" placeholder="nama lengkap" />
-            </p>
-            <p>
-                <label for="alamat">Alamat: </label>
-                <textarea name="alamat"></textarea>
-            </p>
-            <p>
-                <label for="jenis_kelamin">Jenis Kelamin: </label>
-                <label><input type="radio" name="jenis_kelamin" value="laki-laki"> Laki-laki</label>
-                <label><input type="radio" name="jenis_kelamin" value="perempuan"> Perempuan</label>
-            </p>
-            <p>
-                <label for="agama">Agama: </label>
-                <select name="agama">
-                    <option>Islam</option>
-                    <option>Kristen</option>
-                    <option>Hindu</option>
-                    <option>Budha</option>
-                    <option>Atheis</option>
-                </select>
-            </p>
-            <p>
-                <label for="sekolah_asal">Sekolah Asal: </label>
-                <input type="text" name="sekolah_asal" placeholder="nama sekolah" />
-            </p>
-            <p>
-                <input type="submit" value="Daftar" name="daftar" />
-            </p>
+        <form class="container" action="proses-pendaftaran.php" method="POST">
 
-        </fieldset>
+            <fieldset>
 
-    </form>
+                <p>
+                    <label class="form-label" for="nama">Nama:</label>
+                    <input class="form-control" type="text" name="nama" placeholder="Nama Lengkap" />
+                </p>
+                <p>
+                    <label class="form-label" for="alamat">Alamat:</label>
+                    <textarea class="form-control" name="alamat"></textarea>
+                </p>
+                <p>
+                    <label class="form-check-label" for="jenis_kelamin">Jenis Kelamin:</label>
+                    <label class="form-check-label"><input class="form-check-input" type="radio" name="jenis_kelamin" value="laki-laki">Laki-laki</label>
+                    <label class="form-check-label"><input class="form-check-input" type="radio" name="jenis_kelamin" value="perempuan">Perempuan</label>
+                </p>
+                <p>
+                    <label class="form-label" for="agama">Agama:</label>
+                    <select class="form-select" name="agama">
+                        <option>Islam</option>
+                        <option>Kristen</option>
+                        <option>Katolik</option>
+                        <option>Hindu</option>
+                        <option>Budha</option>
+                        <option>Konghucu</option>
+                    </select>
+                </p>
+                <p>
+                    <label class="form-label" for="sekolah_asal">Sekolah Asal:</label>
+                    <input class="form-control" type="text" name="sekolah_asal" placeholder="Nama Sekolah" />
+                </p>
+                <p>
+                    <input class="btn btn-primary" type="submit" value="Daftar" name="daftar" />
+                </p>
 
+            </fieldset>
+
+        </form>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -28,56 +28,60 @@ if (mysqli_num_rows($query) < 1) {
 
 <head>
     <title>Formulir Edit Siswa | SMK Coding</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
-        <h3>Formulir Edit Siswa</h3>
-    </header>
 
-    <form action="proses-edit.php" method="POST">
+    <section class="position-absolute top-50 start-50 translate-middle">
+        <h3 class="text-center">Formulir Edit Siswa</h3>
 
-        <fieldset>
+        <form class="container" action="proses-edit.php" method="POST">
 
-            <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
+            <fieldset>
 
-            <p>
-                <label for="nama">Nama: </label>
-                <input type="text" name="nama" placeholder="nama lengkap" value="<?php echo $siswa['nama'] ?>" />
-            </p>
-            <p>
-                <label for="alamat">Alamat: </label>
-                <textarea name="alamat"><?php echo $siswa['alamat'] ?></textarea>
-            </p>
-            <p>
-                <label for="jenis_kelamin">Jenis Kelamin: </label>
-                <?php $jk = $siswa['jenis_kelamin']; ?>
-                <label><input type="radio" name="jenis_kelamin" value="laki-laki" <?php echo ($jk == 'laki-laki') ? "checked" : "" ?>> Laki-laki</label>
-                <label><input type="radio" name="jenis_kelamin" value="perempuan" <?php echo ($jk == 'perempuan') ? "checked" : "" ?>> Perempuan</label>
-            </p>
-            <p>
-                <label for="agama">Agama: </label>
-                <?php $agama = $siswa['agama']; ?>
-                <select name="agama">
-                    <option <?php echo ($agama == 'Islam') ? "selected" : "" ?>>Islam</option>
-                    <option <?php echo ($agama == 'Kristen') ? "selected" : "" ?>>Kristen</option>
-                    <option <?php echo ($agama == 'Hindu') ? "selected" : "" ?>>Hindu</option>
-                    <option <?php echo ($agama == 'Budha') ? "selected" : "" ?>>Budha</option>
-                    <option <?php echo ($agama == 'Atheis') ? "selected" : "" ?>>Atheis</option>
-                </select>
-            </p>
-            <p>
-                <label for="sekolah_asal">Sekolah Asal: </label>
-                <input type="text" name="sekolah_asal" placeholder="nama sekolah" value="<?php echo $siswa['sekolah_asal'] ?>" />
-            </p>
-            <p>
-                <input type="submit" value="Simpan" name="simpan" />
-            </p>
+                <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
 
-        </fieldset>
+                <p>
+                    <label class="form-label" for="nama">Nama:</label>
+                    <input class="form-control" type="text" name="nama" placeholder="nama lengkap" value="<?php echo $siswa['nama'] ?>" />
+                </p>
+                <p>
+                    <label class="form-label" for="alamat">Alamat:</label>
+                    <textarea class="form-control" name="alamat"><?php echo $siswa['alamat'] ?></textarea>
+                </p>
+                <p>
+                    <label class="form-check-label" for="jenis_kelamin">Jenis Kelamin:</label>
+                    <?php $jk = $siswa['jenis_kelamin']; ?>
+                    <label class="form-check-label"><input class="form-check-input" type="radio" name="jenis_kelamin" value="laki-laki" <?php echo ($jk == 'laki-laki') ? "checked" : "" ?>> Laki-laki</label>
+                    <label class="form-check-label"><input class="form-check-input" type="radio" name="jenis_kelamin" value="perempuan" <?php echo ($jk == 'perempuan') ? "checked" : "" ?>> Perempuan</label>
+                </p>
+                <p>
+                    <label class="form-label" for="agama">Agama:</label>
+                    <?php $agama = $siswa['agama']; ?>
+                    <select class="form-select" name="agama">
+                        <option <?php echo ($agama == 'Islam') ? "selected" : "" ?>>Islam</option>
+                        <option <?php echo ($agama == 'Kristen') ? "selected" : "" ?>>Kristen</option>
+                        <option <?php echo ($agama == 'Katolik') ? "selected" : "" ?>>Katolik</option>
+                        <option <?php echo ($agama == 'Hindu') ? "selected" : "" ?>>Hindu</option>
+                        <option <?php echo ($agama == 'Budha') ? "selected" : "" ?>>Budha</option>
+                        <option <?php echo ($agama == 'Konghucu') ? "selected" : "" ?>>Konghucu</option>
+                    </select>
+                </p>
+                <p>
+                    <label class="form-label" for="sekolah_asal">Sekolah Asal: </label>
+                    <input class="form-control" type="text" name="sekolah_asal" placeholder="nama sekolah" value="<?php echo $siswa['sekolah_asal'] ?>" />
+                </p>
+                <p>
+                    <input class="btn btn-primary" type="submit" value="Simpan" name="simpan" />
+                </p>
+
+            </fieldset>
 
 
-    </form>
+        </form>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
